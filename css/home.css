@@ -1,0 +1,24 @@
+.music-card {
+  height: 70mm;
+  width: 60mm;
+  border: 1px solid rgb(152, 152, 152);
+  border-radius: 10px;
+  padding: 3px;
+}
+
+.bitmap_icon {
+  height: 50mm;
+  width: 50mm;
+  margin: 4mm;
+  border-radius: 10px;
+}
+
+.music-card-text {
+  font-size: 14px;
+  padding: 5mm;
+}
+
+.play-btn {
+  cursor: pointer;
+  text-align: center;
+}
