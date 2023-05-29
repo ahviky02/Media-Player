@@ -70,7 +70,7 @@ require_once './api/dbcon.php';
 
                                 if (mysqli_num_rows($query_result) > 0) {
                                     while ($music = mysqli_fetch_assoc($query_result)) {
-                                        $source = 'uploads/' . $music['pre_name'];
+                                        $source = 'uploads/audios/' . $music['pre_name'];
                                         $id = "icon" . $music['mid'];
                                 ?>
 
