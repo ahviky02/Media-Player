@@ -47,7 +47,7 @@ include('header.php');
 
                 <div class="mb-3">
                     <label class="form-label">Upload Music</label>
-                    <input type="file" class="form-control" id="f" name="file">
+                    <input type="file" accept="audio/mp3, audio/wav" class="form-control" id="f" name="file">
                 </div>
                 <br>
                 <button class="btn btn-success" name="upload_music" type="submit">Submit</button>
