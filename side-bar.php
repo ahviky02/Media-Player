@@ -1,4 +1,4 @@
-<div class="d-flex flex-column flex-shrink-0 p-3 bg-light mt-5" style="width: 60mm; text-align:center;">
+<div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style=" text-align:center;">
     <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item"><a href="index.php" <?php if ($active_page === 'index') {
                                                         echo

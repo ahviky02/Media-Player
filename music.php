@@ -47,23 +47,17 @@ require_once './api/dbcon.php';
         ?>
     </div>
 
-    <div class="main-content col-md-9 col-sm-7">
-
-
-        <div class="container m-5">
+    <div class="main-content" style="width:70%; ">
+        <div class="container mt-2 ml-3">
             <h2>Music Library</h2>
-
-
             <div class="row">
-                <div class="col-sm-6 col-md-4">
-
-
-                    <div class="table-container" style="width:100mm; height:70vh;">
-                        <table class="table table-bordered table-stripped">
+                <div>
+                    <div class="table-container pd-2" style="overflow-x: scroll;">
+                        <table class="table table-borderless pd-5">
                             <thead>
                                 <tr>
                                     <th>Action</th>
-                                    <th>Name</th>
+                                    <th>Audio</th>
                                     <th>Duration</th>
                                 </tr>
                             </thead>
@@ -80,83 +74,23 @@ require_once './api/dbcon.php';
                                         $id = "icon" . $music['mid'];
                                 ?>
 
-                                        <tr>
-                                            <td style="text-align: center;">
-                                                <i id="<?= $id ?>" onclick="playAudio('<?= $id ?>', '<?= $source ?>')" style="font-size: 28px; cursor:pointer;" class="bi bi-play-circle"></i>
-                                            </td>
-                                            <td><?= htmlspecialchars($music['pre_name']) ?></td>
+                                <tr>
+                                    <td style="text-align: center; line-height:28px;">
+                                        <i id="<?= $id ?>" onclick="playAudio('<?= $id ?>', '<?= $source ?>')"
+                                            style="font-size: 28px; cursor:pointer;" class="bi bi-play-circle"></i>
+                                    </td>
+                                    <td><?= htmlspecialchars($music['pre_name']) ?></td>
 
-
-
-
-                                            <script>
-                                                var audio = new Audio();
-                                                var isPlaying = false;
-                                                var storedTime = 0;
-                                                var oldSource = "";
-                                                var oldId = "";
-                                                var currentBtn = null;
-
-                                                function playAudio(id, source) {
-                                                    var btn = document.getElementById(id);
-
-                                                    if (oldId !== id) {
-                                                        if (currentBtn) {
-                                                            currentBtn.classList.remove('bi-pause-circle');
-                                                            currentBtn.classList.add('bi-play-circle');
-                                                        }
-                                                    }
-
-                                                    if (oldSource !== source) {
-                                                        oldSource = source;
-                                                        storedTime = 0; // Reset storedTime to 0 when audio source is changed
-                                                        isPlaying = false;
-                                                    }
-
-                                                    if (isPlaying && currentBtn !== btn) {
-                                                        currentBtn.classList.remove('bi-pause-circle');
-                                                        currentBtn.classList.add('bi-play-circle');
-                                                        audio.pause();
-                                                    }
-
-                                                    if (!isPlaying) {
-                                                        audio.src = source; // Set the source path dynamically
-                                                        audio.currentTime = storedTime; // Set the stored time
-                                                        audio.play();
-                                                        isPlaying = true;
-                                                        console.log("Audio is now playing.");
-                                                        btn.classList.remove('bi-play-circle');
-                                                        btn.classList.add('bi-pause-circle');
-                                                        currentBtn = btn;
-                                                    } else {
-                                                        audio.pause();
-                                                        storedTime = audio.currentTime; // Store the current time 
-                                                        isPlaying = false;
-                                                        console.log("Audio is now paused.");
-                                                        btn.classList.remove('bi-pause-circle');
-                                                        btn.classList.add('bi-play-circle');
-                                                        currentBtn = null;
-                                                    }
-
-                                                    oldId = id;
-                                                }
-                                            </script>
-                                            <td>
-
-                                                <?php
+                                    <td>
+                                        <?php
                                                 echo $music['duration'];
                                                 ?>
-
-                                            </td>
-
+                                    </td>
                                     <?php
                                     }
                                 }
                                     ?>
-
-
-
-                                        </tr>
+                                </tr>
                             </tbody>
 
 
@@ -170,8 +104,21 @@ require_once './api/dbcon.php';
 
     </div>
 </div>
+<div class="bottom-div">
+    <div class="row">
+        <div class="col-1 curr-duration" id="current-time">
 
+        </div>
+        <div class="col-10">
+            <input type="range" class="custom-range">
 
-</body>
+        </div>
+        <div class="col-1 duration" id="duration">
+        </div>
+    </div>
+</div>
+<?php
 
-</html>
+include('footer.php');
+
+?>

@@ -22,3 +22,45 @@
   cursor: pointer;
   text-align: center;
 }
+
+.body {
+  overflow-x: hidden;
+}
+
+.containerx {
+  position: absolute;
+  height: 50px; /* Set a height for the container to make it visible */
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.bottom-div {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fa8d09;
+  padding: 20px 0px;
+  text-align: center;
+}
+
+duration {
+  position: fixed;
+  right: 0;
+  text-align: center;
+}
+
+.curr-duration {
+  text-align: center;
+  position: fixed;
+  left: 0;
+}
+
+.custom-range {
+  width: 200mm;
+}
