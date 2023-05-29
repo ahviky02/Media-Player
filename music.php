@@ -47,7 +47,7 @@ require_once './api/dbcon.php';
         ?>
     </div>
 
-    <div class="main-content" style="width:70%; ">
+    <div class="main-content" style="width:80%; ">
         <div class="container mt-2 ml-3">
             <h2>Music Library</h2>
             <div class="row">
@@ -74,23 +74,22 @@ require_once './api/dbcon.php';
                                         $id = "icon" . $music['mid'];
                                 ?>
 
-                                <tr>
-                                    <td style="text-align: center; line-height:28px;">
-                                        <i id="<?= $id ?>" onclick="playAudio('<?= $id ?>', '<?= $source ?>')"
-                                            style="font-size: 28px; cursor:pointer;" class="bi bi-play-circle"></i>
-                                    </td>
-                                    <td><?= htmlspecialchars($music['pre_name']) ?></td>
+                                        <tr>
+                                            <td style="text-align: center; line-height:28px;">
+                                                <i id="<?= $id ?>" onclick="playAudio('<?= $id ?>', '<?= $source ?>')" style="font-size: 28px; cursor:pointer;" class="bi bi-play-circle"></i>
+                                            </td>
+                                            <td><?= htmlspecialchars($music['pre_name']) ?></td>
 
-                                    <td>
-                                        <?php
+                                            <td>
+                                                <?php
                                                 echo $music['duration'];
                                                 ?>
-                                    </td>
+                                            </td>
                                     <?php
                                     }
                                 }
                                     ?>
-                                </tr>
+                                        </tr>
                             </tbody>
 
 
@@ -104,18 +103,22 @@ require_once './api/dbcon.php';
 
     </div>
 </div>
+
+
 <div class="bottom-div">
     <div class="row">
         <div class="col-1 curr-duration" id="current-time">
-
+            00:00
         </div>
         <div class="col-10">
-            <input type="range" class="custom-range">
+            <input class="custom-range" id="seek-bar" type="range" min="0" value="0">
 
         </div>
         <div class="col-1 duration" id="duration">
+            00:00
         </div>
     </div>
+</div>
 </div>
 <?php
 

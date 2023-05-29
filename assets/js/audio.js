@@ -4,11 +4,12 @@ var storedTime = 0;
 var oldSource = "";
 var oldId = "";
 var currentBtn = null;
-
+var currentTimeElement = document.getElementById('current-time');
+var durationElement = document.getElementById('duration');
+var seekBar = document.getElementById('seek-bar');
 
 function playAudio(id, source) {
     var btn = document.getElementById(id);
-
 
     if (oldId !== id) {
         if (currentBtn) {
@@ -38,6 +39,10 @@ function playAudio(id, source) {
         btn.classList.remove('bi-play-circle');
         btn.classList.add('bi-pause-circle');
         currentBtn = btn;
+
+        audio.addEventListener('timeupdate', updateCurrentTime);
+        audio.addEventListener('loadedmetadata', updateDuration);
+        seekBar.addEventListener('input', seekAudio);
     } else {
         audio.pause();
         storedTime = audio.currentTime; // Store the current time 
@@ -46,8 +51,34 @@ function playAudio(id, source) {
         btn.classList.remove('bi-pause-circle');
         btn.classList.add('bi-play-circle');
         currentBtn = null;
+
+        audio.removeEventListener('timeupdate', updateCurrentTime);
+        audio.removeEventListener('loadedmetadata', updateDuration);
+        seekBar.removeEventListener('input', seekAudio);
     }
 
     oldId = id;
 }
 
+function updateCurrentTime() {
+    var currentTime = audio.currentTime;
+    currentTimeElement.textContent = formatTime(currentTime);
+    seekBar.value = currentTime;
+}
+
+function updateDuration() {
+    var duration = audio.duration;
+    durationElement.textContent = formatTime(duration);
+    seekBar.max = duration;
+}
+
+function formatTime(time) {
+    var minutes = Math.floor(time / 60);
+    var seconds = Math.floor(time % 60);
+    return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+}
+
+function seekAudio() {
+    var seekTime = parseFloat(seekBar.value);
+    audio.currentTime = seekTime;
+}
