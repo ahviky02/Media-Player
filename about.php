@@ -13,35 +13,42 @@ include('header.php');
     </div>
 
     <div class="main-content col-md-9 col-sm-7">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6 col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Card 1</h5>
-                            <p class="card-text">This is the content of Card 1.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Card 2</h5>
-                            <p class="card-text">This is the content of Card 2.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Card 3</h5>
-                            <p class="card-text">This is the content of Card 3.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <script>
+        // JavaScript variable
+        var myVariable = "Hello PHP!";
+
+        // Make an Ajax request
+        $.ajax({
+            url: 'about.php', // Replace with the actual path to your PHP script
+            type: 'POST',
+            data: {
+                myVariable: myVariable
+            },
+            success: function(response) {
+                // Handle the response from PHP
+                console.log(response);
+            },
+            error: function(xhr, status, error) {
+                // Handle error
+                console.log(error);
+            }
+        });
+        </script>
+
+
+
+        <?php
+        // Retrieve the variable from the Ajax request
+        $myVariable = $_POST['myVariable'];
+
+        // Use the variable in your PHP code
+        echo "Received variable: " . $myVariable;
+        ?>
+
+
+
 
     </div>
 </div>
