@@ -1,5 +1,4 @@
 </body>
-<script src="js/audio.js"></script>
-
+<script src="./assets/js/audio.js"></script>
 
 </html>

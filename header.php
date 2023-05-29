@@ -16,6 +16,14 @@
 
 </head>
 
+<style>
+    * {
+        padding: 0px;
+        margin: 0px;
+        overflow-x: hidden;
+    }
+</style>
+
 <body>
 
     <!-- Optional JavaScript -->
