@@ -47,12 +47,12 @@ require_once './api/dbcon.php';
         ?>
     </div>
 
-    <div class="main-content" style="width:80%; ">
+    <div class="main-content" style="width: 80%; height: 100%">
         <div class="container mt-2 ml-3">
             <h2>Music Library</h2>
             <div class="row">
                 <div>
-                    <div class="table-container pd-2" style="overflow-x: scroll;">
+                    <div class="table-container pd-2" style="max-height: 500px; overflow-y: auto;">
                         <table class="table table-borderless pd-5">
                             <thead>
                                 <tr>
