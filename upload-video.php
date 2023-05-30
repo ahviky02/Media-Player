@@ -19,6 +19,15 @@ include('header.php');
     <form action="./api/upload_video.php" method="post" enctype="multipart/form-data">
 
         <div class="form-1">
+
+            <div class="message">
+                <?php
+                if (isset($_SESSION['Video_Upload'])) {
+                    echo $_SESSION['Video_Upload'];
+                    unset($_SESSION['Video_Upload']);
+                }
+                ?>
+            </div>
             <div class="control-form">
                 <label for="music_name">Video Name</label>
                 <input type="text" name="video_name">
