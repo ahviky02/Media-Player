@@ -16,9 +16,21 @@ include('header.php');
 </div>
 <div class="part-2">
     <h2>Upload Audio </h2>
+
+
+
     <form action="./api/upload_music.php" method="post" enctype="multipart/form-data">
 
         <div class="form-1">
+
+            <div class="message">
+                <?php
+                if (isset($_SESSION['Music_Upload'])) {
+                    echo $_SESSION['Music_Upload'];
+                    unset($_SESSION['Music_Upload']);
+                }
+                ?>
+            </div>
 
             <div class="control-form">
                 <label for="music_name">Audio Name</label>
