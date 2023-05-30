@@ -75,8 +75,9 @@ function updateDuration() {
 function formatTime(time) {
     var minutes = Math.floor(time / 60);
     var seconds = Math.floor(time % 60);
-    return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+    return (minutes < 10 ? '0' : '') + minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
 }
+
 
 function seekAudio() {
     var seekTime = parseFloat(seekBar.value);

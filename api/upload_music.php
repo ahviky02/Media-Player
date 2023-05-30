@@ -8,6 +8,15 @@ if (isset($_POST['upload_music'])) {
     $uploadedFile = $_FILES['file']['name'];
     $targetFile = $targetDirectory . basename($uploadedFile);
 
+    function formatTime($time)
+    {
+        $hours = floor($time / 3600);
+        $minutes = floor(($time % 3600) / 60);
+        $seconds = $time % 60;
+
+        return sprintf("%02d:%02d:%02d", $hours, $minutes, $seconds);
+    }
+
     $getID3 = new getID3();
 
     // Analyze the audio file
@@ -17,10 +26,11 @@ if (isset($_POST['upload_music'])) {
         $pre_name = $_FILES['file']['name'];
         $status = 1;
         $music_name = $_POST['music_name'];
-        $duration = $fileInfo['playtime_seconds'];
+        $durationSeconds = $fileInfo['playtime_seconds'];
+        $durationFormatted = formatTime($durationSeconds);
         $created_at = date("Y-m-d H:i:s");
 
-        $sql_query = "INSERT INTO music (music_name, pre_name, status, duration, created_at) VALUES ('$music_name', '$pre_name', '$status', '$duration', '$created_at')";
+        $sql_query = "INSERT INTO music (music_name, pre_name, status, duration, created_at) VALUES ('$music_name', '$pre_name', '$status', '$durationFormatted', '$created_at')";
         $conn->query($sql_query);
 
         $_SESSION['Music_Upload'] = "File uploaded successfully.";
