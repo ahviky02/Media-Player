@@ -1,66 +1,37 @@
-.music-card {
-  height: 70mm;
-  width: 60mm;
-  border: 1px solid rgb(152, 152, 152);
-  border-radius: 10px;
-  padding: 3px;
-}
-
-.bitmap_icon {
-  height: 50mm;
-  width: 50mm;
-  margin: 4mm;
-  border-radius: 10px;
-}
-
-.music-card-text {
-  font-size: 14px;
-  padding: 5mm;
-}
-
-.play-btn {
-  cursor: pointer;
-  text-align: center;
-}
-
-.body {
-  overflow-x: hidden;
-}
-
-.containerx {
-  position: absolute;
-  height: 50px; /* Set a height for the container to make it visible */
-}
-
-html,
+*,
 body {
-  height: 100%;
   margin: 0;
   padding: 0;
+  background: rgb(34, 33, 33);
+  color: rgb(76, 246, 201);
+  font-family: sans-serif;
 }
 
-.bottom-div {
-  position: fixed;
-  bottom: 0;
-  left: 0;
+h2 {
+  color: aliceblue;
+  margin: 20px;
+}
+
+body {
+  padding-top: 5px;
+}
+
+.part-1,
+.part-2 {
+  float: left;
+  padding: 0;
+  margin: 0;
   width: 100%;
-  background-color: #fa8d09;
-  padding: 20px 0px;
-  text-align: center;
+  display: block;
 }
 
-duration {
-  position: fixed;
-  right: 0;
-  text-align: center;
-}
+@media (min-width: 768px) {
+  /* Styles for screens larger than 768px width */
+  .part-1 {
+    width: 20%;
+  }
 
-.curr-duration {
-  text-align: center;
-  position: fixed;
-  left: 0;
-}
-
-.custom-range {
-  width: 200mm;
+  .part-2 {
+    width: 78%;
+  }
 }

@@ -1,5 +1,5 @@
-<div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style=" text-align:center;">
-    <ul class="nav nav-pills flex-column mb-auto">
+<div class="side-bar">
+    <ul>
         <li class="nav-item"><a href="index.php" <?php if ($active_page === 'index') {
                                                         echo
                                                         'class="nav-link active"';
