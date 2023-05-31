@@ -96,3 +96,43 @@ input[type="range"] {
   /* forced-color-adjust: blue;
   scrollbar-track-color: rgb(182, 89, 89); */
 }
+
+.m-recents {
+  display: inline-flex;
+}
+
+.m-part {
+  margin-top: 20px;
+  width: 90mm;
+  height: 90mm;
+}
+
+.m-part i {
+  text-align: center;
+  font-size: 250px;
+  color: black;
+  border-radius: 15px;
+  background: linear-gradient(
+    to right,
+    rgb(14, 123, 187) 0%,
+    rgb(104, 45, 148) 100%
+  );
+}
+
+.v-part {
+  margin-top: 20px;
+  width: 90mm;
+  height: 90mm;
+}
+
+.v-part i {
+  text-align: center;
+  font-size: 250px;
+  color: black;
+  border-radius: 15px;
+  background: linear-gradient(
+    to right,
+    rgb(224, 25, 144) 0%,
+    rgb(104, 45, 148) 100%
+  );
+}
