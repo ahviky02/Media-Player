@@ -7,9 +7,14 @@ var currentBtn = null;
 var currentTimeElement = document.getElementById('current-time');
 var durationElement = document.getElementById('duration');
 var seekBar = document.getElementById('seek-bar');
+var music_name = document.getElementById('music_name');
 
 function playAudio(id, source) {
     var btn = document.getElementById(id);
+
+    // Set the audio name in the music_name variable
+    var audioName = getAudioName(source);
+    music_name.textContent = audioName;
 
     if (oldId !== id) {
         if (currentBtn) {
@@ -59,6 +64,16 @@ function playAudio(id, source) {
 
     oldId = id;
 }
+
+
+function getAudioName(source) {
+    var parts = source.split('/');
+    var fileNameWithExtension = parts[parts.length - 1];
+    var fileName = fileNameWithExtension.split('.')[0];
+
+    return fileName;
+}
+
 
 function updateCurrentTime() {
     var currentTime = audio.currentTime;

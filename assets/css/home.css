@@ -2,7 +2,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: rgb(34, 33, 33);
+  background: rgb(43, 42, 42);
   color: rgb(76, 246, 201);
   font-family: sans-serif;
 }
@@ -15,8 +15,14 @@ h2 {
 body {
   padding-top: 5px;
 }
+.part-1 {
+  float: left;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: block;
+}
 
-.part-1,
 .part-2 {
   float: left;
   padding: 0;
@@ -29,9 +35,64 @@ body {
   /* Styles for screens larger than 768px width */
   .part-1 {
     width: 20%;
+    position: fixed;
   }
 
   .part-2 {
+    float: right;
     width: 78%;
   }
+}
+
+.part-3 {
+  display: flex;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(43, 42, 42);
+  padding: 20px;
+  height: 50px;
+  text-align: center;
+}
+
+.b1 {
+  background: transparent;
+}
+
+.b2 {
+  background: transparent;
+}
+
+.curr-duration {
+  position: fixed;
+  left: 0;
+  margin-left: 30px;
+  bottom: 3%;
+  background: transparent;
+}
+
+.duration {
+  position: fixed;
+  right: 0;
+  bottom: 3%;
+  margin-right: 30px;
+  background: transparent;
+}
+
+.range {
+  position: fixed;
+  left: 50%;
+  bottom: 2%;
+  transform: translate(-50%, -50%);
+  background: transparent;
+}
+
+input[type="range"] {
+  width: 300mm;
+  height: 5px;
+  cursor: pointer;
+  accent-color: rgb(76, 246, 201);
+  /* forced-color-adjust: blue;
+  scrollbar-track-color: rgb(182, 89, 89); */
 }
