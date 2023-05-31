@@ -57,18 +57,27 @@ require_once './api/dbcon.php';
     </table>
 </div>
 
-<!-- <div class="part-3">
-    <div class="curr-duration" id="current-time">
-        00:00
-    </div>
-    <div class="">
-        <input class="custom-range" id="seek-bar" type="range" min="0" value="0">
+<div class="part-3">
+    <div class="b1" id="music_name">
 
     </div>
-    <div class="duration" id="duration">
-        00:00
+
+    <div class="b2">
+
+
+        <div class="curr-duration" id="current-time">
+            00:00
+        </div>
+        <div class="range">
+            <input class="custom-range" id="seek-bar" type="range" min="0" value="0">
+
+        </div>
+        <div class="duration" id="duration">
+            00:00
+        </div>
     </div>
-</div> -->
+</div>
+
 <?php
 
 include('footer.php');

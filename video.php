@@ -18,7 +18,7 @@ require_once './api/dbcon.php';
 
     <h2>Music Library</h2>
     <table>
-        <thead>
+        <thead style="height:15mm;">
             <tr>
                 <th>Action</th>
                 <th>Video</th>
@@ -38,9 +38,9 @@ require_once './api/dbcon.php';
                     $id = "icon" . $video['vid'];
             ?>
 
-            <tr>
-                <td style="text-align: center; line-height:28px;">
-                    <?php
+                    <tr style="height:15mm;">
+                        <td style="text-align: center; line-height:28px;">
+                            <?php
                             $data = $video['vid'];
                             $url = "ground.php?data=" . urlencode($data);
                             echo '<a href="' . $url . '">';
@@ -49,19 +49,19 @@ require_once './api/dbcon.php';
                             echo '</a>';
 
                             ?>
-                </td>
-                <td><?= htmlspecialchars($video['pre_name']) ?></td>
+                        </td>
+                        <td><?= htmlspecialchars($video['pre_name']) ?></td>
 
-                <td>
-                    <?php
+                        <td>
+                            <?php
                             echo $video['duration'];
                             ?>
-                </td>
+                        </td>
                 <?php
                 }
             }
                 ?>
-            </tr>
+                    </tr>
         </tbody>
 
 
