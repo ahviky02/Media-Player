@@ -37,22 +37,21 @@ require_once './api/dbcon.php';
                     $id = "icon" . $music['mid'];
             ?>
 
-            <tr style="height:15mm;">
-                <td>
-                    <i id="<?= $id ?>" onclick="playAudio('<?= $id ?>', '<?= $source ?>')"
-                        style="font-size: 28px; cursor:pointer;" class="bi bi-play-circle"></i>
-                </td>
-                <td><?= htmlspecialchars($music['pre_name']) ?></td>
+                    <tr style="height:15mm;">
+                        <td>
+                            <i id="<?= $id ?>" onclick="playAudio('<?= $id ?>', '<?= $source ?>')" style="font-size: 28px; cursor:pointer;" class="bi bi-play-circle"></i>
+                        </td>
+                        <td><?= htmlspecialchars($music['pre_name']) ?></td>
 
-                <td>
-                    <?php
+                        <td>
+                            <?php
                             echo $music['duration'];
                             ?>
-                </td>
+                        </td>
                 <?php
                 }
             } ?>
-            </tr>
+                    </tr>
         </tbody>
     </table>
 </div>
