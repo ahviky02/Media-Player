@@ -20,12 +20,12 @@ This is a simple **Media Player** project using PHP, JavaScript, Bootstrap Icons
 
 1. Clone this repository.
 2. Set up a web server with PHP support.
-3. Import the included database schema to create the necessary tables. The SQL file is available in the repository's assets folder (`assets/database_schema.sql`).
+3. Import the included database schema to create the necessary tables. The SQL file is available in the repository's assets folder (`assets/SQL/player.sql`).
    - You can import the SQL file using a database management tool like phpMyAdmin or by using the command-line interface. For example, using the command-line MySQL client:
      ```bash
-     mysql -u your_username -p your_database_name < assets/database_schema.sql
+     mysql -u your_username -p your_database_name < assets/SQL/player.sql
      ```
-     Replace `your_username` with your MySQL username and `your_database_name` with the name of the database where you want to import the schema.
+     Replace `root` with your MySQL username and `player` with the name of the database where you want to import the schema.
 4. Update the database connection configuration in the PHP files, if needed.
 5. Launch the application and start uploading and playing media files.
 
