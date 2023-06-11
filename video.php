@@ -16,7 +16,7 @@ require_once './api/dbcon.php';
 
 <div class="part-2">
 
-    <h2>Music Library</h2>
+    <h2>Videos</h2>
     <table>
         <thead style="height:15mm;">
             <tr>
