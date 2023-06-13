@@ -14,7 +14,7 @@ This is a simple **Media Player** project built using PHP, JavaScript, Bootstrap
 - JavaScript
 - Bootstrap Icons
 - MySQL
-- PHP libraries (mention the specific libraries if applicable)
+- PHP libraries 
 
 ## Installation
 
