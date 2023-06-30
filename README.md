@@ -2,6 +2,7 @@
 
 This is a simple **Media Player** project built using PHP, JavaScript, Bootstrap Icons, and some PHP libraries. Users can upload audio and video files to the server, and the title and media metadata will be saved in a database. Users can easily play the uploaded media files.
 
+
 ## Features
 
 - Upload audio and video files to the server
@@ -30,6 +31,12 @@ This is a simple **Media Player** project built using PHP, JavaScript, Bootstrap
 5. Launch the application and start uploading and playing media files.
 
 Feel free to customize and enhance the project according to your specific requirements.
+
+## Screenshots
+![Screenshot 1](assets/Webimages/1.jpeg)
+![Screenshot 2](assets/Webimages/2.jpeg)
+![Screenshot 3](assets/Webimages/3.jpeg)
+![Screenshot 3](assets/Webimages/4.jpeg)
 
 ## License
 
